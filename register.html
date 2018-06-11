@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>REGISTER</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="/jquery.min.js"></script>
+        <script type="text/javascript" src="my_code.js"></script>
+    </head>
+    <body>
+        <div class="header">
+            <h1 class="headerTitle">HW3 RESTFUL EMAIL</h1> 
+            <a href="mail.html"><p style="text-align:right; font-size:30px; position:relative; top:-50px; left:-40px; font-weight:bold;">LOG IN</p></a>
+        </div>
+
+        <div id="mainRegister">
+
+            <div id ="registerForm" class="registerDivs">
+                <h2>Register new email</h2>
+                Login Email: <input type="text" name="email"><br>
+                Full Name: <input type="text" name="fullName"><br>
+                Password: <input type="password" name="password"><br>
+                Re-enter Password: <input type="password" name="password2"><br>
+                <button id="register">Register</button><br>
+                <span class="errorMessage" id="passNoMatchError1" style="font:bold 16px Arial;">Passwords do not match.</span>
+                <span  class="errorMessage" id="passNoMatchError4" style="font:bold 16px Arial;">Cannot leave any blank fields</span><br>
+            </div>
+
+            <div id="updatePassForm" class="registerDivs" >
+                <h2>Change Password</h2>
+                Login Email: <input type="text" name="email"><br>
+                Current Password: <input type="password" name="password"><br>
+                New Password: <input type="password" name="newPass1"><br>
+                Re-enter new Password: <input type="password" name="newPass2"><br>
+                <button id="update">Update Password</button><br>
+                <span  class="errorMessage" id="passNoMatchError2" style="font:bold 16px Arial;">Passwords do not match.</span>
+                <span  class="errorMessage" id="passNoMatchError3" style="font:bold 16px Arial;">Cannot leave any blank fields</span><br>
+            </div>
+        </div>    
+
+        <span style="font:24px bold;" id="errors"></span>
+
+        <div id="result"></div>
+    </body>
+</html>

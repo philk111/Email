@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mail</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="/jquery.min.js"></script>
+        <script type="text/javascript" src="my_code.js"></script>
+    </head>
+    <body>
+        <div class="header">
+            <h1 class="headerTitle">HW3 RESTFUL EMAIL</h1> 
+            <span id="logout">LOG OUT!</span>
+            <a href="register.html"><p style="text-align:right; font-size:20px; position:relative; top:-25px; left:-40px; font-weight:bold;"><span id="back">Register/Change Password</span></p></a>
+        </div>
+        <div id="logInPane">
+            LOG IN:
+            Email: <input type="text" name="email">
+            Password: <input type="password" name="password">
+            <button id="loginButton">Login</button>
+
+        </div><br>
+
+        <div id="mainWrapper">
+
+            <div id="menuPaneWrapper">
+                <div class="menuItems">
+                    <span id=newEmail style="border-size:5px;">New Email</span><br><br><br>
+                    <span id=inbox>Inbox</span><br><br><br>
+                    <span id=important>Important</span><br><br><br>
+                    <span id=social>Social</span><br><br><br>
+                    <span id=spam>SPAM</span><br><br><br>
+                    <span id=outbox>Outbox</span>
+                </div>
+            </div>
+            <div id="tabsWrapper">    
+
+                <div id="newEmailTab">
+                    <br>
+                    To:<br> <input type="text" name="to" style="width:1000px;"><br><br>
+                    Subject:<br> <input type="text" name="subject" style="width:1000px;"><br><br>
+                    Email:<br>
+                    <textarea name="body" style="width:1000px;" rows="15" cols="70">Write your email here...</textarea><br><br>
+                    upload file:<br>
+                    <input id="fileUploaded" type="file"/>
+                    <input type="submit" value="Send Email" id="sendEmail"> 
+                </div>
+
+                <div id="inboxTab">
+                    <div class="emailList"><br></div>
+                    <div class="emailViewer">
+                        Date:<br><span class="date"></span><br><br>
+                        From:<br><span class="from"></span><br><br>
+                        Subject:<br><span class="subject"></span><br><br><br>
+                        Body:<br><span class="body"></span><br><br><br>
+                        Move to folder:<br>
+                        <select id="inboxMoveToFolder" onchange="inboxMoveToFolder();">
+                            <option disabled selected value>Move to folder...</option>
+                            <option value="Inbox">Inbox</option>
+                            <option value="Important">Important</option>
+                            <option value="Social">Social</option>
+                            <option value="Spam">Spam</option>
+                        </select>
+                        <br><br>
+                        <span class="fileAttachment">attached: </span><br>
+                        <span class="hasAttachment">DOWNLOAD ATTACHMENT!</span>
+                    </div>
+                </div>        
+
+                <div id="importantTab">
+                    <div class="emailList"><br></div>
+                    <div class="emailViewer">
+                        Date:<br><span class="date"></span><br><br>
+                        From:<br><span class="from"></span><br><br>
+                        Subject:<br><span class="subject"></span><br><br><br>
+                        Body:<br><span class="body"></span><br><br><br>
+                        Move to folder:<br><br><br>
+                        <select id="importantMoveToFolder"onchange="importantMoveToFolder();">
+                            <option disabled selected value>Move to folder...</option>
+                            <option value="Inbox">Inbox</option>
+                            <option value="Important">Important</option>
+                            <option value="Social">Social</option>
+                            <option value="Spam">Spam</option>
+                        </select>
+                        <br><br>
+                        <span class="fileAttachment">attached: </span><br>
+                        <span class="hasAttachment">DOWNLOAD ATTACHMENT!</span>
+                    </div>
+                </div>
+
+                <div id="socialTab">
+                    <div class="emailList"><br></div>
+                    <div class="emailViewer">
+                        Date:<br><span class="date"></span><br><br>
+                        From:<br><span class="from"></span><br><br>
+                        Subject:<br><span class="subject"></span><br><br><br>
+                        Body:<br><span class="body"></span><br><br><br>
+                        Move to folder:<br><br><br>
+                        <select id="socialMoveToFolder" onchange="socialMoveToFolder();">
+                            <option disabled selected value>Move to folder...</option>
+                            <option value="Inbox">Inbox</option>
+                            <option value="Important">Important</option>
+                            <option value="Social">Social</option>
+                            <option value="Spam">Spam</option>
+                        </select>
+                        <br><br>
+                        <span class="fileAttachment">attached: </span><br>
+                        <span class="hasAttachment">DOWNLOAD ATTACHMENT!</span>
+                    </div>
+                </div>
+
+                <div id="spamTab">
+                    <div class="emailList"><br></div>
+                    <div class="emailViewer">
+                        Date:<br><span class="date"></span><br><br>
+                        From:<br><span class="from"></span><br><br>
+                        Subject:<br><span class="subject"></span><br><br><br>
+                        Body:<br><span class="body"></span><br><br><br>
+                        Move to folder:<br><br><br>
+                        <select id="spamMoveToFolder" onchange="spamMoveToFolder();">
+                            <option disabled selected value>Move to folder...</option>
+                            <option value="Inbox">Inbox</option>
+                            <option value="Important">Important</option>
+                            <option value="Social">Social</option>
+                            <option value="Spam">Spam</option>
+                        </select>
+                        <br><br>
+                        <span class="fileAttachment">attached: </span><br>
+                        <span class="hasAttachment">DOWNLOAD ATTACHMENT!</span>
+                    </div>
+                </div>
+
+                <div id="outboxTab">
+                    <div class="emailList"><br></div>
+                    <div class="emailViewer">
+                        Date:<br><span class="date"></span><br><br>
+                        From:<br><span class="from"></span><br><br>
+                        Subject:<br><span class="subject"></span><br><br><br>
+                        Body:<br><span class="body"></span><br><br><br>
+                        <br><br>
+                        <span class="fileAttachment">attached: </span><br>
+                        <span class="hasAttachment">DOWNLOAD ATTACHMENT!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <span style="font:26px bold Arial; position:relative; left:500px;" id="errorsMail"></span>
+    </body>
+</html>
