@@ -1,0 +1,177 @@
+/*HEADERS------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.header{
+    background-color:#FFEFAC;
+    height:100px;
+    margin: 0px 0px;
+    position:relative;
+    top:-20px;
+    border: 5px solid blue;
+    border-radius:10px;  
+}
+
+.headerTitle{
+    position:relative;
+    margin:0px;
+    right:-40px;
+    top:25px;
+    font: 44px  Cooper Black;
+}
+
+.errorMessage {
+    color: red;
+    font-size: 70%;
+    display: none;
+}
+
+/*TABLE------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+table {
+    overflow: hidden;
+    border-radius:5px;
+}
+
+th {
+    text-align:left;
+    height: 50px;
+    font:bold 16px Arial Black;
+    background-color:#9AA164;
+    
+}
+
+td {
+   width:275px; 
+   max-width: 275px;
+   overflow: hidden;
+   
+}
+
+.registerDivs {
+text-align:left;
+border: black ridge thick; 
+margin:50px auto;
+background-color:#90C1FF;
+padding: 50px 100px;
+}          
+   
+#mainRegister {
+  display: flex;
+}       
+
+#mainWrapper{
+  display: flex;
+}
+
+body{
+     color:black;
+     background-color:#3C4AFF;
+}
+
+#main div {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 400px;
+}       
+
+/*TABS------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+#inboxTab, #importantTab, #socialTab, #spamTab, #outboxTab{
+display: flex;
+flex-wrap: wrap;
+align-items:flex-start;
+align-content:flex-start
+}
+
+.emailList{
+background-color:#FFEFAC;
+position:relative;
+left:50px;
+top:20px;
+}
+
+.emailViewer{
+height:450px;    
+width:600px;
+position:relative;
+left:85px;
+top:20px;
+background-color:#9AA164;
+border:groove blue;
+border:5px 5px;
+word-wrap: break-word;
+font-size:16px;
+    
+}
+
+#newEmailTab{
+    margin:0px 150px;
+}
+
+.fileAttachment{
+    display: inline-block;
+    font:bold 14px Arial;
+    position:relative;
+    
+}
+.hasAttachment{
+    border:ridge #7F0000;
+    border-radius:5px;
+    border:2px 2px;
+    background-color:#90C1FF;
+    text-align:center;
+    display: inline-block;
+    font:bold 26px Arial;
+    position:relative;
+}
+
+#tabsWrapper{
+width:1300px;
+font:bold 18px Batang;
+background-color:#90C1FF;
+border:ridge #7F0000;
+border:3px 3px;
+border-color:#050814;
+overflow: scroll;
+border-radius:5px;
+position:relative;
+left:30px;
+}
+
+#newEmail{
+    background-color:#90C1FF
+}
+/*MENU ITEMS------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+#newEmail, #inbox, #important, #social, #spam, #outbox{
+  border-radius:10px;  
+  border:3px ridge #2AD130;
+  padding:10px 10px;
+  border-color:black;
+    
+}
+
+#logout{
+    background-color:#9AA164;
+    border-radius:10px;  
+    padding:10px 10px;
+    border-color:black;
+    border:3px ridge black;
+    position:relative;
+    font-size:20px; 
+    font-weight:bold; 
+    left:1330px;
+    top:-10px;
+    
+}
+    
+#menuPaneWrapper{
+position:relative;
+width:170px;
+font:bold 22px Arial Black;
+height:500px;
+text-align:left;
+}
+
+/*LOGIN PANE------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+#logInPane{
+    border:5px ridge blue;
+    padding: 25px 10px;
+    text-align:center;
+    background-color:#90C1FF;
+}
